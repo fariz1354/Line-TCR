@@ -212,26 +212,25 @@ def bot(op):
 				pass
 
         #------Protect Group Kick start------#
-       if op.type == 11:
-          if wait["Protectgr"] == True:
-            if ki.getGroup(op.param1).preventJoinByTicket == False:
-              if op.param2 in Bots:
-                pass
-              if op.param2 in admin:
-                pass
-              else:
-                try:
-                  ki.sendText(op.param1,ki.getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
-                  ki.kickoutFromGroup(op.param1,[op.param2])
-                  X = ki.getGroup(op.param1)
-                  X.preventJoinByTicket = True
-                  ki.updateGroup(X)
-                except:
-                  random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  Z = random.choice(KAC).getGroup(op.param1)
-                  Z.preventJoinByTicket = True
-		  random.choice(KAC).updateGroup(Z)
+	if op.type == 11:
+            if wait["Protectgr"] == True:
+                if ki.getGroup(op.param1).preventJoinByTicket == False:
+                    if op.param2 in Bots:
+                        pass
+                    if op.param2 in admin:
+                        pass
+                    else:
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        wait["blacklist"][op.param2] = True
+                        ki.reissueGroupTicket(op.param1)
+                        X = ki.getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        ki.updateGroup(X)
+                        print "Url Opened, Autokick on"
+                else:
+                    print "random group update"
+            else:
+pass
         #------Protect Group Kick finish-----#
 
         #------Cancel Invite User start------#
