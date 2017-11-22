@@ -230,7 +230,7 @@ def bot(op):
                 else:
                     print "random group update"
             else:
-pass
+		pass
         #------Protect Group Kick finish-----#
 
         #------Cancel Invite User start------#
