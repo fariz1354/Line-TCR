@@ -214,18 +214,18 @@ def bot(op):
         #------Protect Group Kick start------#
        if op.type == 11:
           if wait["Protectgr"] == True:
-            if cl.getGroup(op.param1).preventJoinByTicket == False:
+            if ki.getGroup(op.param1).preventJoinByTicket == False:
               if op.param2 in Bots:
                 pass
               if op.param2 in admin:
                 pass
               else:
                 try:
-                  cl.sendText(op.param1,cl.getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
-                  cl.kickoutFromGroup(op.param1,[op.param2])
-                  X = cl.getGroup(op.param1)
+                  ki.sendText(op.param1,ki.getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
+                  ki.kickoutFromGroup(op.param1,[op.param2])
+                  X = ki.getGroup(op.param1)
                   X.preventJoinByTicket = True
-                  cl.updateGroup(X)
+                  ki.updateGroup(X)
                 except:
                   random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
                   random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
