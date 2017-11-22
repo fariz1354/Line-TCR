@@ -253,17 +253,22 @@ def bot(op):
 					except:
 						print "Bot can't cancel the invitation"
 		
-                if op.type == 13:
-          if wait["Protectcancl"] == True:
-            group = cl.getGroup(op.param1)
-            gMembMids = [contact.mid for contact in group.invitee]
-            if op.param2 in Bots:
-              pass
-            if op.param2 in admin:
-              pass
-            else:
-              random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
-	      random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
+		if op.type == 13:
+			if wait["Protectcancl"] == True:
+				try:
+					X = ki.getGroup(op.param1)
+					gInviMids = [contact.mid for contact in X.invitee]
+					ki.cancelGroupInvitation(op.param1, gInviMids)
+					print gInviMids + "invite canceled"
+				except:
+					try:
+						print "Retry canceling invitation"
+						X = ki.getGroup(op.param1)
+						gInviMids = [contact.mid for contact in X.invitee]
+						ki.cancelGroupInvitation(op.param1, gInviMids)
+						print gInviMids + "invite canceled"
+					except:
+						print "Bot can't cancel the invitation"
 		
         if op.type == 13:
             if mid in op.param3:
