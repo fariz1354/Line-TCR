@@ -105,7 +105,7 @@ Cmid = kc.getProfile().mid
 
 Bots=[mid,Amid,Bmid,Cmid,"YOUR_MID"]
 admin=["YOUR_MID"]
-admsa=["YOUR_MID"]
+admin=["YOUR_MID"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -121,7 +121,7 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"Ard",
+    "cName":"-M-J-",
     "cName2":"Ard 1",
     "cName3":"Ard 2",
     "cName4":"Ard 3",
@@ -212,25 +212,26 @@ def bot(op):
 				pass
 
         #------Protect Group Kick start------#
-        if op.type == 11:
-            if wait["Protectgr"] == True:
-                if ki.getGroup(op.param1).preventJoinByTicket == False:
-                    if op.param2 in Bots:
-                        pass
-                    if op.param2 in admin:
-                        pass
-                    else:
-                        ki.kickoutFromGroup(op.param1,[op.param2])
-                        wait["blacklist"][op.param2] = True
-                        ki.reissueGroupTicket(op.param1)
-                        X = ki.getGroup(op.param1)
-                        X.preventJoinByTicket = True
-                        ki.updateGroup(X)
-                        print "Url Opened, Autokick on"
-                else:
-                    print "random group update"
-            else:
+       if op.type == 11:
+          if wait["Protectgr"] == True:
+            if cl.getGroup(op.param1).preventJoinByTicket == False:
+              if op.param2 in Bots:
                 pass
+              if op.param2 in admin:
+                pass
+              else:
+                try:
+                  cl.sendText(op.param1,cl.getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
+                  cl.kickoutFromGroup(op.param1,[op.param2])
+                  X = cl.getGroup(op.param1)
+                  X.preventJoinByTicket = True
+                  cl.updateGroup(X)
+                except:
+                  random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
+                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                  Z = random.choice(KAC).getGroup(op.param1)
+                  Z.preventJoinByTicket = True
+		  random.choice(KAC).updateGroup(Z)
         #------Protect Group Kick finish-----#
 
         #------Cancel Invite User start------#
@@ -253,71 +254,63 @@ def bot(op):
 					except:
 						print "Bot can't cancel the invitation"
 		
-        if op.type == 13:
-            if mid in op.param3:
-                if wait["autoJoin"] == True:
-                    cl.acceptGroupInvitation(op.param1)
-                    print "BOT 1 Joined"
-                else:
-                    print "autoJoin is Off"
+                if op.type == 13:
+          if wait["Protectcancl"] == True:
+            group = cl.getGroup(op.param1)
+            gMembMids = [contact.mid for contact in group.invitee]
+            if op.param2 in Bots:
+              pass
+            if op.param2 in admin:
+              pass
             else:
-				pass
+              random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
+	      random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
 		
         if op.type == 13:
-            if op.param3 in mid:
-                if op.param2 in Amid:
-                    G = Amid.getGroup(op.param1)
-                    G.preventJoinByTicket = False
-                    Amid.updateGroup(G)
-                    Ticket = Amid.reissueGroupTicket(op.param1)
-                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
-                    G.preventJoinByTicket = True
-                    Amid.updateGroup(G)
-                    Ticket = Amid.reissueGroupTicket(op.param1)
-
-            if op.param3 in Amid:
-                if op.param2 in mid:
-                    X = cl.getGroup(op.param1)
-                    X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    Ti = cl.reissueGroupTicket(op.param1)
-                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
-                    X.preventJoinByTicket = True
-                    ki.updateGroup(X)
-                    Ti = ki.reissueGroupTicket(op.param1)
-
-            if op.param3 in Bmid:
-                if op.param2 in Amid:
-                    X = ki.getGroup(op.param1)
-                    X.preventJoinByTicket = False
-                    ki.updateGroup(X)
-                    Ti = ki.reissueGroupTicket(op.param1)
-                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
-                    X.preventJoinByTicket = True
-                    kk.updateGroup(X)
-                    Ti = kk.reissueGroupTicket(op.param1)
-
-            if op.param3 in Cmid:
-                if op.param2 in Bmid:
-                    X = kk.getGroup(op.param1)
-                    X.preventJoinByTicket = False
-                    kk.updateGroup(X)
-                    Ti = kk.reissueGroupTicket(op.param1)
-                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
-                    X.preventJoinByTicket = True
-                    kc.updateGroup(X)
-                    Ti = kc.reissueGroupTicket(op.param1)
+            if mid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  cl.acceptGroupInvitation(op.param1)
+                else:
+                  cl.rejectGroupInvitation(op.param1)
+              else:
+                print "autoJoin is Off"
                 
-            if op.param3 in Dmid:
-                if op.param2 in Cmid:
-                    X = kc.getGroup(op.param1)
-                    X.preventJoinByTicket = False
-                    kc.updateGroup(X)
-                    Ti = kc.reissueGroupTicket(op.param1)
-                    ks.acceptGroupInvitationByTicket(op.param1,Ti)
-                    X.preventJoinByTicket = True
-                    ks.updateGroup(X)
-                    Ti = ks.reissueGroupTicket(op.param1)
+            if Amid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  ki.acceptGroupInvitation(op.param1)
+                else:
+                  ki.rejectGroupInvitation(op.param1)
+              else:
+                print "autoJoin is Off"
+                
+            if Bmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  kk.acceptGroupInvitation(op.param1)
+                else:
+                  kk.rejectGroupInvitation(op.param1)
+              else:
+                print "autoJoin is Off"
+                
+            if Cmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  kc.acceptGroupInvitation(op.param1)
+                else:
+                  kc.rejectGroupInvitation(op.param1)
+              else:
+                print "autoJoin is Off"
+                
+            if Dmid in op.param3:
+              if wait["autoJoin"] == True:
+                if op.param2 in Bots or owner:
+                  ks.acceptGroupInvitation(op.param1)
+                else:
+                  ks.rejectGroupInvitation(op.param1)
+              else:
+		  print "autoJoin is Off"
                 
             if op.param3 in Emid:
                 if op.param2 in Dmid:
@@ -409,7 +402,7 @@ def bot(op):
 				print "Admin has been kicked"
 				if op.param2 in Bots:
 					pass
-				if op.param2 in admsa:
+				if op.param2 in admin:
 					pass
 				else:
 					cl.kickoutFromGroup(op.param1,[op.param2])
@@ -1259,7 +1252,7 @@ def bot(op):
          #----------------Fungsi Banned Kick Target Finish----------------------#                
 
             elif "Sweep this group" in msg.text.lower():
-              if msg.from_ in admsa:
+              if msg.from_ in admin:
                 if msg.toType == 2:
                     print "sweeping"
                     _name = msg.text.replace("Sweep this group","")
@@ -1522,7 +1515,7 @@ def bot(op):
                         pass
 
             elif msg.text.lower() == 'ard out all':
-			  if msg.from_ in admsa:
+			  if msg.from_ in admin:
 				gid = cl.getGroupIdsJoined()
 				gid = ki.getGroupIdsJoined()
 				gid = kk.getGroupIdsJoined()
@@ -1537,7 +1530,7 @@ def bot(op):
 				else:
 					cl.sendText(msg.to,"He declined all invitations")
             elif msg.text.lower() == 'ard out':
-			  if msg.from_ in admsa:
+			  if msg.from_ in admin:
 				gid = cl.getGroupIdsJoined()
 				for i in gid:
 					cl.leaveGroup(i)
@@ -1572,7 +1565,7 @@ def bot(op):
 				cl.sendText(msg.to,"-- List Groups --\n\n"+ h +"\nTotal groups =" +" ["+str(len(gid))+"]")
 												
             elif "Staff add @" in msg.text:
-                if msg.from_ in admsa:
+                if msg.from_ in admin:
                     print "[Command]Staff add executing"
                     _name = msg.text.replace("Staff add @","")
                     _nametarget = _name.rstrip('  ')
@@ -1599,7 +1592,7 @@ def bot(op):
                     cl.sendText(msg.to,"Admin permission required.")
 
             elif "Staff remove @" in msg.text:
-                if msg.from_ in admsa:
+                if msg.from_ in admin:
                     print "[Command]Staff remove executing"
                     _name = msg.text.replace("Staff remove @","")
                     _nametarget = _name.rstrip('  ')
