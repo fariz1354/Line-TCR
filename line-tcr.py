@@ -14,19 +14,19 @@ import requests,tempfile
 #kk.loginResult()
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
+cl.login(token="EniREpZXxL9jEd5Lyyc3.buR6kI43UYYJPsFBWtCcOW.3FtceSpnrblnwqUuVQQwv9w1kA85VD3nVYOLWtFTBvA=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(qr=True)
+ki.login(token="EniDnT1pcLYRhpH4s4b1.9Pqpw8rWGfp5nZgd8b0sGq.5YH39J534Dxzue59Kf/GFl2UA4uNl+OpWIfNyUOhCP0=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(qr=True)
+kk.login(token="EnJSpK6m7f1BBYAecCe0.uoEVZ358XP6oB2+t3M2zWa.So2b28ICj7Cgrdo6S7W14dOkSclxThFK0NBXbrS0HAw=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(qr=True)
+kc.login(token="EnWukIP7LanoCO4cTlF1.geDeRpm8ggIlB3eg+5v7Oq.NkSl5XgaT7SkllL3jpl5hWdBDU+UBVPNWZrI7joZp3g=")
 kc.loginResult()
 
 cl
@@ -35,23 +35,24 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage =""" - Ard Squad bot -
-
-General command :
-Me  =  Cek akun sendiri
-My mid  =  Cek akun Mid
-Mid @ = Cek mid via tag
-Bot?  =  Cek akun Bot
-Ginfo  =  Group info
-Id Group = Melihat id grup
-Group pict  =  Melihat pict grup
-Speedbot  =  Cek kecepatan bot
-Up  =  Fungsi spam chat
-Tagall  =  Mention semua user
-Cek  =  Membuat set point
-Sider  =  Melihat sider dibawah read point
-Apakah ...  =  Menanyakan jawaban ya atau tidak
-Creator  =  Melihat kontak pembuat bot
+helpMessage =""" 
+┏━━━━ೋ• ❄ •ೋ━━━━━┓
+            ¢σммαи∂ fσя вσt PUβLICҜ
+┗━━━━ೋ• ❄ •ೋ━━━━━┛
+╠❂͜͡➣Me  =  Cek akun sendiri
+╠❂͜͡➣My mid  =  Cek akun Mid
+╠❂͜͡➣Mid @ = Cek mid via tag
+╠❂͜͡➣Bot?  =  Cek akun Bot
+╠❂͜͡➣Ginfo  =  Group info
+╠❂͜͡➣Id Group = Melihat id grup
+╠❂͜͡➣Group pict  =  Melihat pict grup
+╠❂͜͡➣Speedbot  =  Cek kecepatan bot
+╠❂͜͡➣Up  =  Fungsi spam chat
+╠❂͜͡➣Tagall  =  Mention semua user
+╠❂͜͡➣Cek  =  Membuat set point
+╠❂͜͡➣Sider  =  Melihat sider dibawah read point
+╠❂͜͡➣Apakah ...  =  Menanyakan jawaban ya atau tidak
+╠❂͜͡➣Creator  =  Melihat kontak pembuat bot
 
 private command :
 Set group = Melihat private menu"""
@@ -67,35 +68,37 @@ Setgroup =""" Private Menu 􀔃􀄆red check mark􏿿
 [No Joinned]
 -- Joinn on/off
 
-􀔃􀅕red arrow right􏿿 Command Private
-[Set View] = Melihat proteksi bot
-[Get ready] = Cek respon bot
-[Gn namagroup] = Ganti nama grup
-[Open url] = Membuka url grup
-[Gurl] = Membuka dan mengirim url grup
-[Close url] = Menutup url grup
-[Cancel] = Cancel user masuk grup
-[Staff add @] = Menambah user admin
-[Staff remove @] = Menghapus user dari admin
-[Stafflist] = Melihat daftar admin
-[Ban @] = Ban target with mention
-[Ban] = Ban target with send contact 
-[Unban @] = Unban target with mention
-[Unban] = Unban target with send contact
-[Banlist] = Melihat daftar akun ter-banned
-[Kill @] = Kick target banned
-[Nk @] = Kick target user
-[List group] = Melihat daftar grup pada bot
-[Group id] = Melihat daftar id grup pada bot
-[Invite mid] = Invite via mid
-[inv: (gid)] = Invite admin ke group id yang dituju
-[Kick mid] = Kick via mid
-[Ard Squad join] = Invite semua bot
-[Bye bots] = Mengeluarkan semua bots assist
-[Bye Ard] = Mengeluarkan bot utama
-[Ard out] = Mengeluarkan bot utama dari semua grup
-[Bc ...] = Untuk broadcast ke semua grup
-[Kernel] = Melihat kernel bot"""
+┏━━━━ೋ• ❄ •ೋ━━━━━┓
+            ¢σммαи∂ fσя вσt ΔDMIΠ
+┗━━━━ೋ• ❄ •ೋ━━━━━┛
+╠❂͜͡➣[Set View] = Melihat proteksi bot
+╠❂͜͡➣[Get ready] = Cek respon bot
+╠❂͜͡➣[Gn namagroup] = Ganti nama grup
+╠❂͜͡➣[Open url] = Membuka url grup
+╠❂͜͡➣[Gurl] = Membuka dan mengirim url grup
+╠❂͜͡➣[Close url] = Menutup url grup
+╠❂͜͡➣[Cancel] = Cancel user masuk grup
+╠❂͜͡➣[Staff add @] = Menambah user admin
+╠❂͜͡➣[Staff remove @] = Menghapus user dari admin
+╠❂͜͡➣[Stafflist] = Melihat daftar admin
+╠❂͜͡➣[Ban @] = Ban target with mention
+╠❂͜͡➣[Ban] = Ban target with send contact 
+╠❂͜͡➣[Unban @] = Unban target with mention
+╠❂͜͡➣[Unban] = Unban target with send contact
+╠❂͜͡➣[Banlist] = Melihat daftar akun ter-banned
+╠❂͜͡➣[Kill @] = Kick target banned
+╠❂͜͡➣[Nk @] = Kick target user
+╠❂͜͡➣[List group] = Melihat daftar grup pada bot
+╠❂͜͡➣[Group id] = Melihat daftar id grup pada bot
+╠❂͜͡➣[Invite mid] = Invite via mid
+╠❂͜͡➣[inv: (gid)] = Invite admin ke group id yang dituju
+╠❂͜͡➣[Kick mid] = Kick via mid
+╠❂͜͡➣[Join all] = Invite semua bot
+╠❂͜͡➣[Bye all] = Mengeluarkan semua bots assist
+╠❂͜͡➣[Bye Ard] = Mengeluarkan bot utama
+╠❂͜͡➣[Bot out] = Mengeluarkan bot utama dari semua grup
+╠❂͜͡➣[Bc ...] = Untuk broadcast ke semua grup
+╠❂͜͡➣[Kernel] = Melihat kernel bot"""
 KAC=[cl,ki,kk,kc]
 DEF=[ki,kk,kc]
 mid = cl.getProfile().mid
@@ -104,8 +107,8 @@ Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
 
 Bots=[mid,Amid,Bmid,Cmid,"u1a3ebb754b0bd05b50a3e3f8327ba765"]
-admin=["u1a3ebb754b0bd05b50a3e3f8327ba765"]
-admin=["u1a3ebb754b0bd05b50a3e3f8327ba765"]
+admin=["uc8487830df0446e693d46f5642e25b7a"]
+admin=["uc8487830df0446e693d46f5642e25b7a"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -113,7 +116,7 @@ wait = {
     'leaveRoom':True,
     'timeline':False,
     'autoAdd':True,
-    'message':"Thanks for adding me\nFollow my instagram; instagram.com/fajrinard",
+    'message':"Thanks for adding me",
     "lang":"JP",
     "comment":"Thanks for add me",
     "commentOn":True,
@@ -121,10 +124,10 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"-M-J-",
-    "cName2":"Ard 1",
-    "cName3":"Ard 2",
-    "cName4":"Ard 3",
+    "cName":" ",
+    "cName2":" ",
+    "cName3":" ",
+    "cName4":" ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -1109,7 +1112,7 @@ def bot(op):
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
-            elif msg.text in ["Ard Squad join"]:
+            elif msg.text in ["Join all","All join"]:
               if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
@@ -1130,7 +1133,7 @@ def bot(op):
                         G.preventJoinByTicket(G)
                         cl.updateGroup(G)
 
-            elif msg.text in ["Ard join"]:
+            elif msg.text in ["Join all"]:
               if msg.form_ in admin:
                   x = ki.getGroup(msg.to)
                   x.preventJoinByTicket = False
@@ -1184,7 +1187,7 @@ def bot(op):
     #----------------------Fungsi Join Group Finish---------------#
 
     #-------------Fungsi Leave Group Start---------------#
-            elif msg.text in ["Bye bots"]:
+            elif msg.text in ["Bye all"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = ki.getGroup(msg.to)
@@ -1364,7 +1367,10 @@ def bot(op):
                             except:
                                 ki.sendText(msg.to,"Target already in blacklist.")
             #----------------Fungsi Banned User Target Finish-----------------------# 
-            
+            elif 'Dor' in msg.text:
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': "ub76a0153a283da9a1443dfb043181335"}
+               cl.sendMessage(msg)
             #----------------Fungsi Unbanned User Target Start-----------------------#
             elif "Unban @" in msg.text:
               if msg.from_ in admin:
@@ -1518,7 +1524,7 @@ def bot(op):
                     except:
                         pass
 
-            elif msg.text.lower() == 'ard out all':
+            elif msg.text.lower() == 'Bye bot':
 			  if msg.from_ in admin:
 				gid = cl.getGroupIdsJoined()
 				gid = ki.getGroupIdsJoined()
@@ -1533,7 +1539,7 @@ def bot(op):
 					cl.sendText(msg.to,"Ard Squad bot leaving all groups.")
 				else:
 					cl.sendText(msg.to,"He declined all invitations")
-            elif msg.text.lower() == 'ard out':
+            elif msg.text.lower() == 'Out all':
 			  if msg.from_ in admin:
 				gid = cl.getGroupIdsJoined()
 				for i in gid:
